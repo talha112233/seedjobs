@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying project A...'
+                echo 'Deploying project AB...'
                 // Add your deployment commands here
             }
         }
