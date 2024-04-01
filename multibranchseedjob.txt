@@ -1,0 +1,25 @@
+folder('Microservice') {
+    displayName('Microservice')
+    description('Folder for Microservice')
+
+    folder('application') {
+        multibranchPipelineJob('sample-app') {
+            branchSources {
+                git {
+                    id('sample-app')
+                    remote('https://github.com/talha112233/multi_branch.git')
+                }
+            }
+            factory {
+                workflowBranchProjectFactory {
+                    scriptPath('Jenkinsfile')
+                }
+            }
+            orphanedItemStrategy {
+                discardOldItems {
+                    numToKeep(20)
+                }
+            }
+        }
+    }
+}
